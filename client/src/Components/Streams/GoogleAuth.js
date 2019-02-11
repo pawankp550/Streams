@@ -19,26 +19,33 @@ componentDidMount(){
                         isSignedIn : this.auth.isSignedIn.get()
                     }
                 )
+                this.auth.isSignedIn.listen(this.renderauthButton);
         });
 
     });
 }
 
-renderauthButton(){
-    if(this.state.isSignedIn === null){
-        return <h3>I don't know</h3>
-    } else if(this.state.isSignedIn){
-        return <h3>Signed In</h3>
+renderauthButton = () => {
+   this.setState({
+                        isSignedIn : this.auth.isSignedIn.get()
+                    });
+}
+
+onClickHandler(){
+    if(this.state.isSignedIn){
+        this.auth.signOut();
     }
     else{
-        return <h3>Signed Out</h3>
+        this.auth.signIn();
     }
 }
 
     render(){
         return(
             <div>
-            {this.renderauthButton()}
+                <button className="ui red button" onClick={this.onClickHandler.bind(this)}>
+                    <i class="fab fa-google"></i> {this.state.isSignedIn? 'Sign Out' : 'Sign In'}
+                </button>
             </div>
         )
     }

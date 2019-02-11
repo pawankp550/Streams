@@ -9,7 +9,6 @@ const StreamCreate = () => {
             </div>
     )
 
-
 }
 
 export default StreamCreate;
