@@ -9,7 +9,7 @@ const Header = () => {
             <div >
                 <div className="ui secondary pointing menu">
                     <NavLink to='/' className="item" exact>
-                        <i class="home icon"></i>
+                        <i className="large home icon HeaderIcon"></i>
                     </NavLink>
 
                 <div className="right menu">
@@ -17,6 +17,7 @@ const Header = () => {
                         New Stream
                     </NavLink>
                     <GoogleAuth />
+
                 </div>
                 </div>
 
