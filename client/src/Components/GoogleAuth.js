@@ -43,7 +43,7 @@ onClickHandler(){
         return(
             <div>
                 <button className="ui red button" onClick={this.onClickHandler.bind(this)}>
-                    <i class="fab fa-google"></i> {this.props.isSignedIn? 'Sign Out' : 'Sign In'}
+                    <i className="fab fa-google"></i> {this.props.isSignedIn? 'Sign Out' : 'Sign In'}
                 </button>
             </div>
         )

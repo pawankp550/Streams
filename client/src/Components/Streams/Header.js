@@ -12,20 +12,16 @@ const Header = () => {
                         <i className="large home icon HeaderIcon"></i>
                     </NavLink>
 
-                <div className="right menu">
-                    <NavLink to='/streams/new' className="ui item" exact>
-                        New Stream
-                    </NavLink>
-                    <GoogleAuth />
+                    <div className="right menu">
+                        <NavLink to='/streams/new' className="ui item" exact>
+                            NEW STREAM
+                        </NavLink>
+                        <GoogleAuth />
 
-                </div>
-                </div>
-
+                    </div>
+               </div>
         </div>
     )
-
-
 }
-
 
 export default Header;

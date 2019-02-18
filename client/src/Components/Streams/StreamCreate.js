@@ -4,12 +4,15 @@ import { Field, reduxForm } from 'redux-form'
 
 class StreamCreate extends React.Component {
 
-renderInput({input, label}){
-
-return <div className = 'createFormElements' >
-        <label>{label}</label>
-        <input   {...input}  />
-    </div>
+renderInput({input, label, meta}){
+   const errorClass = `field ${meta.error && meta.touched?'error':'null'}`
+    return <div className = {errorClass}>
+            <div className='field'>
+                <label>{label}</label>
+                <input   {...input}  autoComplete = 'off' />
+                <label>{meta.touched?meta.error:null}</label>
+            </div>
+        </div>
 }
 
 onSubmit(formValues){
@@ -18,23 +21,40 @@ onSubmit(formValues){
 
 
 render(){
-    return(
-            <form
-                onSubmit = {this.props.handleSubmit(this.onSubmit)}
-                className='ui form' >
-                    <div class="field">
-                         <Field name='Title' component={this.renderInput} label = 'Title' />
-                    </div>
-                    <div class="field">
-                    <Field name='Description' component={this.renderInput} label = 'Description' />
-                    </div>
+    return(<div className="ui teal segment">
+                <form
+                    onSubmit = {this.props.handleSubmit(this.onSubmit)}
+                    className='ui form' >
+                            <Field name='Title' component={this.renderInput} label = 'Title' />
 
-                    <button className="ui teal button">Submit</button>
-                </form>
+                            <Field name='Description' component={this.renderInput} label = 'Description' />
+                        <button className="ui teal button">Submit</button>
+                    </form>
+            </div>
         )
     }
 }
 
+const validate = (formValues) => {
+
+    const error = {}
+
+    if(!formValues.Title){
+
+        error.Title = 'Please enter a Title'
+
+    }
+
+    if(!formValues.Description){
+
+        error.Description = 'Please enter a Description'
+    }
+
+       return error
+
+}
+
 export default reduxForm({
-            form : 'streamCreate'
+            form : 'streamCreate',
+            validate
         })(StreamCreate);
