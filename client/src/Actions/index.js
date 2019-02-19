@@ -1,3 +1,4 @@
+import streams from '../Apis/streams'
 export const signIn = (userId) => {
     return {
         type : 'Sign_In',
@@ -13,4 +14,62 @@ export const signOut = () => {
 
     }
 
+}
+
+export const createStream = (formValues) => {
+    return async (dispatch) => {
+           const response = streams.post('/streams', formValues);
+           
+           dispatch({
+               type : 'Create_Stream',
+               payload : response.data
+           });
+
+    };
+}
+
+export const fetchStreams = () => {
+    return async (dispatch) => {
+           const response = streams.get('/streams');
+           
+           dispatch({
+               type : 'Fetch_Streams',
+               payload : response.data
+           });
+
+    };
+}
+
+
+export const fetchStream = (id) => {
+    return async (dispatch) => {
+           const response = streams.get(`/streams/${id}`);
+           
+           dispatch({
+               type : 'Fetch_Stream',
+               payload : response.data
+           });
+    };
+}
+
+export const editStream = (id, formValues) => {
+    return async (dispatch) => {
+           const response = streams.put(`/streams/${id}`, formValues);
+           
+           dispatch({
+               type : 'Edit_Stream',
+               payload : response.data
+           });
+    };
+}
+
+export const deleteStream = (id) => {
+    return async (dispatch) => {
+           const response = streams.delete(`/streams/${id}`);
+           
+           dispatch({
+               type : 'Delete_Stream',
+               payload : response.data
+           });
+    };
 }

@@ -1,4 +1,24 @@
 {
-    "Streams" : []
-
+  "Streams": [
+    {
+      "Title": "First Stream",
+      "Description": "This is first stream",
+      "id": 1
+    },
+    {
+      "Title": "Second Stream",
+      "Description": "This is Second Stream",
+      "id": 2
+    },
+    {
+      "Title": "Third Stream",
+      "Description": "This is third stream",
+      "id": 3
+    },
+    {
+      "Title": "djydhdkd",
+      "Description": "kfsffd",
+      "id": 4
+    }
+  ]
 }
