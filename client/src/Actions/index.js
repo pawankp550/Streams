@@ -69,7 +69,7 @@ export const deleteStream = (id) => {
            
            dispatch({
                type : 'Delete_Stream',
-               payload : response.data
+               payload : id
            });
     };
 }
