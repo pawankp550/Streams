@@ -18,7 +18,7 @@ export const signOut = () => {
 
 export const createStream = (formValues) => {
     return async (dispatch) => {
-           const response = streams.post('/streams', formValues);
+           const response = await streams.post('/streams', formValues);
            
            dispatch({
                type : 'Create_Stream',
@@ -30,7 +30,7 @@ export const createStream = (formValues) => {
 
 export const fetchStreams = () => {
     return async (dispatch) => {
-           const response = streams.get('/streams');
+           const response = await streams.get('/streams');
            
            dispatch({
                type : 'Fetch_Streams',
@@ -43,7 +43,7 @@ export const fetchStreams = () => {
 
 export const fetchStream = (id) => {
     return async (dispatch) => {
-           const response = streams.get(`/streams/${id}`);
+           const response = await streams.get(`/streams/${id}`);
            
            dispatch({
                type : 'Fetch_Stream',
@@ -54,7 +54,7 @@ export const fetchStream = (id) => {
 
 export const editStream = (id, formValues) => {
     return async (dispatch) => {
-           const response = streams.put(`/streams/${id}`, formValues);
+           const response = await streams.put(`/streams/${id}`, formValues);
            
            dispatch({
                type : 'Edit_Stream',
@@ -65,7 +65,7 @@ export const editStream = (id, formValues) => {
 
 export const deleteStream = (id) => {
     return async (dispatch) => {
-           const response = streams.delete(`/streams/${id}`);
+           const response = await streams.delete(`/streams/${id}`);
            
            dispatch({
                type : 'Delete_Stream',
