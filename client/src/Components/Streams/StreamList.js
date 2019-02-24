@@ -15,7 +15,7 @@ class StreamList extends React.Component{
                     
                     <div className="ui left aligned segment" key={stream.id}>
                     <div className="ui grid">
-                    <div className="two wide column"><i class="huge audible icon"></i></div>
+                    <div className="two wide column"><i className="huge audible icon"></i></div>
                     <div className="four wide column"><div className="item"><h3>{stream.Title}</h3></div>
                         <div>{stream.Description}</div></div></div>
                     
@@ -27,7 +27,6 @@ class StreamList extends React.Component{
     }
 
     render(){
-        console.log(this.props.Streams);
         return(
             <div className='ui teal segment'>
                 {this.renderList()}
