@@ -19,6 +19,7 @@ renderInput({input, label, meta}){
 
 onSubmit = (formValues) => {
     this.props.createStream(formValues);
+    
 }
 
 

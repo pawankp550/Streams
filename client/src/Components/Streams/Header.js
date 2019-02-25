@@ -13,9 +13,6 @@ const Header = () => {
                     </NavLink>
 
                     <div className="right menu">
-                        <NavLink to='/streams/new' className="ui item" exact>
-                            NEW STREAM
-                        </NavLink>
                         <GoogleAuth />
 
                     </div>
