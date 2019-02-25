@@ -12,10 +12,9 @@ class StreamList extends React.Component{
     renderAdmin(stream){
         if(stream.userId === this.props.CurrentUserId){
                return(
-                <div className="ui buttons">
-                    <button className="ui secondary button">Delete</button>
-                    <div className="or"></div>
-                    <button className="ui teal button">Edit</button>
+                <div className="ui buttons right floated content">
+                  <button className="ui teal button">Delete</button>
+                  <button className="ui button">Edit</button>
                 </div>
 
                ) 
@@ -44,20 +43,19 @@ class StreamList extends React.Component{
             stream => {
                 return(
                     
-                    <div className="ui left aligned segment" key={stream.id}>
-                        <div className="ui grid">
-                            <div className="two wide column"><i className="huge audible icon"></i></div>
-                            <div className="four wide column">
-                                <div className="item"><h3>{stream.Title}</h3></div>
-                                <div>{stream.Description}</div>
+                        
+                            <div className="item" key={stream.id}>
+                                <i className="huge audible icon"/>
+                            <div className="content">
+                                 {stream.Title}
+                                <div className="description">{stream.Description}</div>
                             </div>
-                            <div className="four wide column"></div>
-                            <div className="two wide column"></div>
-                            <div className="four wide column right aligned">
+                            
+                            
                                 { this.renderAdmin(stream) }
+                         
                             </div>
-                        </div>  
-                    </div>
+                      
                 );
             }
         )
@@ -67,7 +65,9 @@ class StreamList extends React.Component{
         return(
             <div className='ui teal segment'>
                 <h1>STREAMS</h1>
-                {this.renderList()}
+                <div className="ui celled list">
+                    {this.renderList()}     
+                </div>
                 {this.renderCreateStream()}
             </div>
         );
