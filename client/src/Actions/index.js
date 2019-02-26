@@ -4,17 +4,13 @@ export const signIn = (userId) => {
     return {
         type : 'Sign_In',
         payload : userId
-
     }
-
 }
 
 export const signOut = () => {
     return {
         type : 'Sign_Out'
-
     }
-
 }
 
 export const createStream = (formValues) => {
@@ -22,7 +18,6 @@ export const createStream = (formValues) => {
     
 
     return async (dispatch, getState) => {
-            console.log(getState().auth);
            const { userId } = getState().auth;
            const response = await streams.post('/streams', {...formValues , userId} );
            
