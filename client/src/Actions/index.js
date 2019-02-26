@@ -1,4 +1,5 @@
-import streams from '../Apis/streams'
+import streams from '../Apis/streams';
+import history from '../history';
 export const signIn = (userId) => {
     return {
         type : 'Sign_In',
@@ -29,6 +30,8 @@ export const createStream = (formValues) => {
                type : 'Create_Stream',
                payload : response.data
            });
+
+           history.push('/');
 
     };
 }
