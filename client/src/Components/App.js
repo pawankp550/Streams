@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../App.css';
-import { Route, BrowserRouter} from 'react-router-dom';
+import { Route} from 'react-router-dom';
 import StreamCreate from './Streams/StreamCreate';
 import StreamDelete from './Streams/StreamDelete';
 import StreamEdit from './Streams/StreamEdit';
