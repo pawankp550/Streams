@@ -7,12 +7,6 @@
       "id": 10
     },
     {
-      "Title": "Stream Created",
-      "Description": "I created this stream",
-      "userId": "102681026186998464452",
-      "id": 11
-    },
-    {
       "Title": "12rt",
       "Description": "fe",
       "userId": "111364442809053826518",
@@ -23,30 +17,18 @@
       "Description": "Edited Enter",
       "userId": "111364442809053826518",
       "id": 13
-    },  
-    {
-      "Title": "this ",
-      "Description": "testing navigation after stream create",
-      "userId": "102681026186998464452",
-      "id": 16
     },
     {
-      "Title": "Stream12",
+      "Title": "Stream12s",
       "Description": "New Stream",
       "userId": "102681026186998464452",
       "id": 17
     },
     {
-      "Title": "tfu",
-      "Description": "hth",
+      "Title": "new",
+      "Description": "qwsa",
       "userId": "102681026186998464452",
       "id": 18
-    },
-    {
-      "Title": "th",
-      "Description": "dth",
-      "userId": "102681026186998464452",
-      "id": 19
     }
   ]
 }
